@@ -1,16 +1,12 @@
-package com.humiston.view;
+package com.humiston.worldclock.dto;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
- 
-@ManagedBean
-@RequestScoped
-public class OfficeBean implements Serializable{
+public class OfficeDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private String officeName;
+	private String time;
  
     public String getOfficeName() {
         return officeName;
@@ -19,8 +15,12 @@ public class OfficeBean implements Serializable{
     public void setOfficeName(String officeName) {
         this.officeName = officeName;
     }
-    
-    public void addOffice(){
-    	System.out.println("Here! "+officeName);
-    }
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
 }

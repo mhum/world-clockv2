@@ -1,4 +1,4 @@
-package com.humiston.view;
+package com.humiston.worldclock.view;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import com.humiston.dto.OfficeDto;
+import com.humiston.worldclock.dto.OfficeDto;
  
 @ManagedBean
 @ViewScoped
