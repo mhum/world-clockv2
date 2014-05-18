@@ -15,7 +15,7 @@ public class OfficeClock extends Clock{
     public static final String COMPONENT_TYPE = "com.humiston.worldclock.component.OfficeClock";
     
     private enum PropertyKeys {
-        timezone
+        timeZone
     }
 
     @Override
@@ -30,11 +30,11 @@ public class OfficeClock extends Clock{
     
     public String getTimeZone() {
     	String tz = Calendar.getInstance().getTimeZone().getID();
-        return (String) getStateHelper().eval(PropertyKeys.timezone, tz);
+        return (String) getStateHelper().eval(PropertyKeys.timeZone, tz);
     }
 
     public void setTimeZone(String timeZone) {
-        getStateHelper().put(PropertyKeys.timezone, timeZone);
+        getStateHelper().put(PropertyKeys.timeZone, timeZone);
     }
 
 }

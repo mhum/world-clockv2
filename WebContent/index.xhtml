@@ -8,26 +8,15 @@
     <h:head>  
   		<h3>Office Clock</h3>
     </h:head>  
-    <h:body>       
-        Sydney: <my:officeClock pattern="EEE, hh:mm:ss a" mode="server" 
-        autoSync="true" syncInterval="60000" timeZone="Australia/Sydney"/>
-        <br></br><br></br>
-        Local: <my:officeClock pattern="EEE, hh:mm:ss a" mode="server"
-        autoSync="true" syncInterval="60000"/>
-        
-        <br></br><br></br><br></br>
-        <p:commandButton id="addOfficeButton" type="button" value="Add Office" onclick="PF('dlg').show()" />      
-		<p:dialog header="Enter Office Information" widgetVar="dlg" resizable="false">
-		    <h:form id="newOffice">
-		        <h:panelGrid columns="2" style="margin-bottom:10px">
-		            <h:outputLabel for="officeName" value="Office Name:" />
-		            <p:inputText id="officeName" value="#{officeBean.officeName}" />
-		        </h:panelGrid>
-		 
-		        <p:commandButton id="submitButton" value="Submit" oncomplete="PF('dlg').hide();"
-		        actionListener="#{officeBean.addOffice}"/>
-		             
-		    </h:form>
-		</p:dialog>
+    <h:body>     
+    	<p:dataGrid var="office" value="#{clockBean.offices}" rows="1">  
+   			<p:panel header="#{office.officeName}">
+		        <my:officeClock pattern="EEE hh:mm:ss a" 
+		        				mode="server" 
+		        				autoSync="true" 
+		        				syncInterval="6000" 
+		        				timeZone="#{office.timeZone}"/>
+	        </p:panel>
+     	</p:dataGrid>
     </h:body>  
 </html> 

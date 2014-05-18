@@ -6,7 +6,16 @@ public class OfficeDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private String officeName;
-	private String time;
+	private String timeZone;
+	
+	public OfficeDto(){
+		
+	}
+	
+	public OfficeDto(String officeName, String timeZone){
+		this.officeName = officeName;
+		this.timeZone = timeZone;
+	}
  
     public String getOfficeName() {
         return officeName;
@@ -16,11 +25,11 @@ public class OfficeDto implements Serializable{
         this.officeName = officeName;
     }
 
-	public String getTime() {
-		return time;
+	public String getTimeZone() {
+		return timeZone;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
+	public void setTimeZone(String timeZone) {
+		this.timeZone = timeZone;
 	}
 }
