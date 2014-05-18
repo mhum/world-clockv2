@@ -3,11 +3,13 @@ package com.humiston.worldclock.renderer;
 import java.io.IOException;
 import java.util.TimeZone;
 
+import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.render.FacesRenderer;
 
 import org.primefaces.component.clock.Clock;
 import org.primefaces.component.clock.ClockRenderer;
+import org.primefaces.context.RequestContext;
 import org.primefaces.util.WidgetBuilder;
 
 import com.humiston.worldclock.component.OfficeClock;
@@ -19,6 +21,22 @@ import com.humiston.worldclock.component.OfficeClock;
 public class OfficeClockRenderer extends ClockRenderer{
 	
 	public static final String RENDERER_TYPE = "com.humiston.worldclock.renderer.OfficeClockRenderer";
+	
+	@Override
+	public void decode(FacesContext context, UIComponent component) {
+		Clock clock = (Clock) component;
+
+		if(clock.isSyncRequest()) {
+			TimeZone remoteTimeZone = TimeZone.getTimeZone((String) clock.getAttributes().get("timeZone")); 
+			TimeZone localTimeZone = TimeZone.getDefault();
+			long utcTime = System.currentTimeMillis(); 
+			long remoteOffset = remoteTimeZone.getOffset(utcTime); 
+			long localOffset = localTimeZone.getOffset(utcTime); 
+			long t = utcTime + remoteOffset-localOffset;
+			RequestContext.getCurrentInstance().addCallbackParam("datetime", t);
+			context.renderResponse();
+		}
+	}
 	
 	@Override
 	protected void encodeScript(FacesContext context, Clock clock) throws IOException {
