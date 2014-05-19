@@ -16,8 +16,8 @@ public class OfficeDto implements Serializable{
 		this.officeName = officeName;
 		this.timeZone = timeZone;
 	}
- 
-    public String getOfficeName() {
+
+	public String getOfficeName() {
         return officeName;
     }
  

@@ -1,22 +1,28 @@
-<html xmlns="http://www.w3.org/1999/xhtml"  
-    xmlns:h="http://java.sun.com/jsf/html"  
-    xmlns:f="http://java.sun.com/jsf/core"  
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:p="http://primefaces.org/ui"
-    xmlns:my="http://www.michaelhumiston.com/ui">  
-  
-    <h:head>  
-  		<h3>Office Clock</h3>
-    </h:head>  
-    <h:body>     
-    	<p:dataGrid var="office" value="#{clockBean.offices}" rows="1">  
-   			<p:panel header="#{office.officeName}">
-		        <my:officeClock pattern="EEE hh:mm:ss a" 
-		        				mode="server" 
-		        				autoSync="true" 
-		        				syncInterval="6000" 
-		        				timeZone="#{office.timeZone}"/>
-	        </p:panel>
-     	</p:dataGrid>
-    </h:body>  
-</html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:my="http://www.michaelhumiston.com/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<h:head>
+	</h:head>
+	<h:body>
+		<h:form id="clocksForm">
+			<p:panelGrid>
+				<p:row>
+					<c:forEach var="office" items="#{clockBean.offices}">
+						<p:column>
+							<p:panel header="#{office.officeName}">
+								<my:officeClock pattern="EEE hh:mm:ss a" mode="server"
+									autoSync="true" syncInterval="60000"
+									timeZone="#{office.timeZone}" />
+							</p:panel>
+						</p:column>
+					</c:forEach>	
+				</p:row>
+			</p:panelGrid>
+		</h:form>
+	</h:body>
+</html>
