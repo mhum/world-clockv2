@@ -13,6 +13,11 @@
 		<param-value>Development</param-value>
 	</context-param>
 	
+	<context-param>  
+	    <param-name>primefaces.THEME</param-name>  
+	    <param-value>rocket</param-value>  
+	</context-param> 
+	
 	<context-param>
   		<param-name>javax.faces.FACELETS_LIBRARIES</param-name>
     	<param-value>/WEB-INF/my.taglib.xml</param-value>

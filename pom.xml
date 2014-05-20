@@ -7,6 +7,14 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>primefaces Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<!-- PrimeFaces -->
@@ -15,6 +23,12 @@
             <artifactId>primefaces</artifactId>
             <version>5.0</version>
         </dependency>	
+       
+        <dependency>  
+    		<groupId>org.primefaces.themes</groupId>  
+   	 		<artifactId>all-themes</artifactId>  
+    		<version>1.0.10</version>  
+		</dependency> 
         
         <dependency>
             <groupId>org.glassfish</groupId>

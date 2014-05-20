@@ -5,24 +5,28 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:my="http://www.michaelhumiston.com/ui"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<ui:include src="addOffice.xhtml" />
 
 	<h:head>
 	</h:head>
 	<h:body>
 		<h:form id="clocksForm">
-			<p:panelGrid>
-				<p:row>
-					<c:forEach var="office" items="#{clockBean.offices}">
-						<p:column>
-							<p:panel header="#{office.officeName}">
-								<my:officeClock pattern="EEE hh:mm:ss a" mode="server"
-									autoSync="true" syncInterval="60000"
-									timeZone="#{office.timeZone}" />
-							</p:panel>
-						</p:column>
-					</c:forEach>	
-				</p:row>
-			</p:panelGrid>
+			<p:dataGrid var="office" value="#{clockBean.offices}"
+						emptyMessage="No offices. Please add one.">
+				<p:panel header="#{office.officeName}">
+		            <h:panelGrid columns="1" style="width:100%">
+       					<my:officeClock pattern="EEE hh:mm:ss a" mode="server"
+						autoSync="true" syncInterval="6000"
+						timeZone="#{office.timeZone}" />
+		 
+		                <p:commandLink update=":clocksForm" action="#{clockBean.removeOffice(office)}">
+		                    <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;"/>
+		                </p:commandLink>
+	            	</h:panelGrid>
+				</p:panel>
+			</p:dataGrid>
 		</h:form>
+		
+	    <p:commandButton value="Add Office" type="button" onclick="PF('dlg').show();" />	
 	</h:body>
 </html>

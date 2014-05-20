@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
 import com.humiston.worldclock.dto.OfficeDto;
@@ -27,4 +28,8 @@ public class ClockBean implements Serializable{
     public void setOffices(List<OfficeDto> offices) {
         this.offices = offices;
     }
+	
+	public void removeOffice(OfficeDto office){
+		offices.remove(office);
+	}
 }
