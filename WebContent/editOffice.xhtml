@@ -4,8 +4,8 @@
 	xmlns:p="http://primefaces.org/ui">
 	<h:head />
 	<h:body>
-	  	<p:dialog header="New Office" widgetVar="addDlg" resizable="false">
-	  		<h:form id="addOfficeForm">
+	  	<p:dialog header="Edit Office" widgetVar="editDlg" resizable="false">
+	  		<h:form id="editOfficeForm">
 		        <h:panelGrid columns="2" cellpadding="5">
 		            <h:outputLabel for="officeName" value="Office Name:"/>
 		            <p:inputText id="officeName" label="officeName" value="#{officeBean.officeName}"/>
@@ -13,8 +13,8 @@
 		            <p:inputText id="timeZone" label="timeZone" value="#{officeBean.timeZone}"/>
 		 
 		            <f:facet name="footer">
-		                <p:commandButton value="Add" action="#{officeBean.addOffice}"
-		                update=":clocksForm addOfficeForm" oncomplete="PF('addDlg').hide()" />
+		                <p:commandButton value="Save" action="#{officeBean.editOffice}"
+		                update=":clocksForm editOfficeForm" oncomplete="PF('editDlg').hide()" />
 		            </f:facet>  
 		        </h:panelGrid>
      		</h:form>	
