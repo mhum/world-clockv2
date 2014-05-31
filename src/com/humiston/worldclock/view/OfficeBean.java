@@ -2,10 +2,12 @@ package com.humiston.worldclock.view;
 
 import java.io.Serializable;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 import com.humiston.worldclock.dto.OfficeDto;
  
@@ -52,6 +54,8 @@ public class OfficeBean implements Serializable{
 
 	public void addOffice(){
     	clockBean.getOffices().add(new OfficeDto(officeName, timeZone));
+		FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, new FacesMessage("Added",  officeName+" has been added."));
     	officeName="";
     	timeZone="";
     }
@@ -62,6 +66,8 @@ public class OfficeBean implements Serializable{
 		office.setOfficeName(officeName);
 		office.setTimeZone(timeZone);
 		clockBean.getOffices().set(index, office);
+		FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, new FacesMessage("Updated",  officeName+" has been updated."));
     	officeName="";
     	timeZone="";
 	}

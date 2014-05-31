@@ -12,8 +12,10 @@
 	
 	<h:head>
 	</h:head>
-	<h:body>
-		<h:form id="clocksForm">		
+	<h:body>	
+		<h:form id="clocksForm">	
+			<p:growl id="messages" showDetail="true"/>	
+			
 			<ui:repeat var="office" value="#{clockBean.offices}">
 				<p:panel header="#{office.officeName}" style="width:200px;float:left">
 		            <h:panelGrid columns="1" style="width:100%">
@@ -22,7 +24,7 @@
 						timeZone="#{office.timeZone}" />
 		 
 		 				<h:panelGrid columns="2"  style="margin:0 auto;">
-			                <p:commandLink update=":clocksForm" action="#{clockBean.removeOffice(office)}">
+			                <p:commandLink update=":clocksForm :clocksForm:messages" action="#{clockBean.removeOffice(office)}">
 			                    <h:outputText styleClass="ui-icon ui-icon-trash" style="margin:0 auto;"/>
 			                </p:commandLink>
 			                

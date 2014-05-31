@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 import com.humiston.worldclock.dto.OfficeDto;
  
@@ -31,5 +33,7 @@ public class ClockBean implements Serializable{
 	
 	public void removeOffice(OfficeDto office){
 		offices.remove(office);
+		FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, new FacesMessage("Removed",  office.getOfficeName()+" has been removed."));
 	}
 }
