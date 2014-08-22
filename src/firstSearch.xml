@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutocompletionResponse>
+ <status>OK</status>
+ <prediction>
+  <description>Herndon, VA, United States</description>
+  <type>locality</type>
+  <type>political</type>
+  <type>geocode</type>
+  <reference>CkQyAAAAjSgQStN6tZoINdQeMB3I518jOZUqC8cTooiLDnDtsz5JMY3DrU7SntmzTUFqPvPGw8hhrlElmAGNiv8Z7dzUQRIQglLtJwF4tVY7NK_83uzPghoUiRGlKZ70n5YYP5-BuoPMJsDX4Rw</reference>
+  <id>3d0ebd41acceeb71732c209b20f6a9e85afa23e0</id>
+  <term>
+   <value>Herndon</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>VA</value>
+   <offset>9</offset>
+  </term>
+  <term>
+   <value>United States</value>
+   <offset>13</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>5</length>
+  </matched_substring>
+ </prediction>
+ <prediction>
+  <description>Herndon, PA, United States</description>
+  <type>locality</type>
+  <type>political</type>
+  <type>geocode</type>
+  <reference>CkQyAAAArLAqdEUmbFw_OK3scrZVUmzmNnBvPXIxcgjtolG1mBGhuKvBvvYLUjL_1Z_kEGctIcUDC3HQRsqhEkQ_oDN0uBIQVuQQHP6_q-7IoxjY-aIYbxoU1reHjVHe0nmocqCIvGC5mpfaTKs</reference>
+  <id>a61316ee2bdd61311ab9bc348aac6ed4a28283fe</id>
+  <term>
+   <value>Herndon</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>PA</value>
+   <offset>9</offset>
+  </term>
+  <term>
+   <value>United States</value>
+   <offset>13</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>5</length>
+  </matched_substring>
+ </prediction>
+ <prediction>
+  <description>Herndon, KY, United States</description>
+  <type>locality</type>
+  <type>political</type>
+  <type>geocode</type>
+  <reference>CkQyAAAAO5hd9a2umtuR8RqlaqQr0a2sfGxxe8v-ck6pArVtKo0NYahrHKLKaXpHDPnwjKvikvNKJDpggH_tkqWVX6RK8RIQuaSyF2_srhBWdvK6AZg_ARoUhpqAvlwZF2IyLHjabyfDAS25vrM</reference>
+  <id>90f447dd20ace2e5c36462ce18ad142e87312260</id>
+  <term>
+   <value>Herndon</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>KY</value>
+   <offset>9</offset>
+  </term>
+  <term>
+   <value>United States</value>
+   <offset>13</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>5</length>
+  </matched_substring>
+ </prediction>
+ <prediction>
+  <description>Herndon, WV, United States</description>
+  <type>locality</type>
+  <type>political</type>
+  <type>geocode</type>
+  <reference>CkQyAAAAnQBITGUbj05P3ZgBc1aNTmW7DtRdluteSBvEgFK5FY8pbIKfkBaDly8lKmmcPDXnVMTfN53g1PLW1dNB5XCu0RIQw_T_HwXeSTaVZX-xquLgIxoUjGPHwlZ_JwivDRWxQ-Fj-oglBXI</reference>
+  <id>7c2285f8866cd3d6f3eb2e92dcbfdd2551cddf06</id>
+  <term>
+   <value>Herndon</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>WV</value>
+   <offset>9</offset>
+  </term>
+  <term>
+   <value>United States</value>
+   <offset>13</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>5</length>
+  </matched_substring>
+ </prediction>
+ <prediction>
+  <description>Herndon, United States</description>
+  <type>locality</type>
+  <type>political</type>
+  <type>geocode</type>
+  <reference>CjQuAAAA72x-5uK4NX65Y2dDVHttX2MLrsxPIxHW6_scnx2GtbOt9yCgoLLzqxP5zU8ABkAuEhAWT6gU4rsO9Obl1s2597DbGhTvsCGcR8q4QQ9RwcxWlN1aa6CoBg</reference>
+  <id>50d3901ab8afeebc1232f18003f15d68622c324e</id>
+  <term>
+   <value>Herndon</value>
+   <offset>0</offset>
+  </term>
+  <term>
+   <value>United States</value>
+   <offset>9</offset>
+  </term>
+  <matched_substring>
+   <offset>0</offset>
+   <length>5</length>
+  </matched_substring>
+ </prediction>
+</AutocompletionResponse>

@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:cc="http://java.sun.com/jsf/composite"
+	xmlns:my="http://www.michaelhumiston.com/ui">
+
+	<cc:interface>
+		<cc:attribute name="officeName" required="true"/>
+		<cc:attribute name="timeZone" required="true" />
+		<cc:attribute name="office" required="true" />
+	</cc:interface>
+
+	<cc:implementation>
+		<p:panel header="#{cc.attrs.officeName}" style="width:200px;float:left">
+			<h:panelGrid columns="1" style="width:100%">
+				<my:officeClock mode="server" pattern="EEE hh:mm:ss a"
+					autoSync="true" syncInterval="6000" timeZone="#{cc.attrs.timeZone}" />
+
+				<h:panelGrid columns="2" style="margin:0 auto;">
+					<p:commandLink update=":clocksForm"
+						action="#{officeList.removeOffice(ofc)}">
+						<h:outputText styleClass="ui-icon ui-icon-trash"
+							style="margin:0 auto;" />
+					</p:commandLink>
+
+					<p:commandLink update=":editOfficeForm"
+						oncomplete="PF('editDlg').show()" title="Edit Office">
+						<h:outputText styleClass="ui-icon ui-icon-pencil"
+							style="margin:0 auto;" />
+						<f:setPropertyActionListener value="#{cc.attrs.office}"
+							target="#{office.selectedOffice}" />
+					</p:commandLink>
+				</h:panelGrid>
+
+			</h:panelGrid>
+		</p:panel>
+	  </cc:implementation>
+</html>

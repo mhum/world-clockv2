@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlaceDetailsResponse>
+ <status>OK</status>
+ <result>
+  <name>Herndon</name>
+  <vicinity>Herndon</vicinity>
+  <type>locality</type>
+  <type>political</type>
+  <formatted_address>Herndon, VA, USA</formatted_address>
+  <address_component>
+   <long_name>Herndon</long_name>
+   <short_name>Herndon</short_name>
+   <type>locality</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Dranesville</long_name>
+   <short_name>Dranesville</short_name>
+   <type>administrative_area_level_3</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Fairfax County</long_name>
+   <short_name>Fairfax County</short_name>
+   <type>administrative_area_level_2</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Virginia</long_name>
+   <short_name>VA</short_name>
+   <type>administrative_area_level_1</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>United States</long_name>
+   <short_name>US</short_name>
+   <type>country</type>
+   <type>political</type>
+  </address_component>
+  <geometry>
+   <location>
+    <lat>38.9695545</lat>
+    <lng>-77.3860976</lng>
+   </location>
+   <viewport>
+    <southwest>
+     <lat>38.9532510</lat>
+     <lng>-77.4135901</lng>
+    </southwest>
+    <northeast>
+     <lat>38.9886860</lat>
+     <lng>-77.3652590</lng>
+    </northeast>
+   </viewport>
+  </geometry>
+  <url>https://maps.google.com/maps/place?q=Herndon,+VA,+USA&amp;ftid=0x89b638060f5da643:0x928022b51c6c357d</url>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png</icon>
+  <reference>CoQBcwAAAP9GL64NegQ4x5kcO8y3fBQB-xtdBTannZPYLVkH5nV70Q5uwGEp6taBRQ--QkiVDEU1wp9bRMlSTFaX_hDJjp5oDhk1LXdUWBmd1NNFJg22cTK9moP3LdGWMRhfns1AYH3nursLYUS2UqE7nOLwsXEsj7hrMuS01kZwJosv2fGfEhDeuzoxRiPN0E-ccCtW4ZxhGhRou434YnnVfgQ2VJWZnV5PbpYxlg</reference>
+  <id>3d0ebd41acceeb71732c209b20f6a9e85afa23e0</id>
+  <adr_address>&lt;span class=&quot;locality&quot;&gt;Herndon&lt;/span&gt;, &lt;span class=&quot;region&quot;&gt;VA&lt;/span&gt;, &lt;span class=&quot;country-name&quot;&gt;USA&lt;/span&gt;</adr_address>
+ </result>
+</PlaceDetailsResponse>

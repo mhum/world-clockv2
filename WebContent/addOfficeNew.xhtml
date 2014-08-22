@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head />
+	<h:body>
+	  	<p:dialog header="New Office" widgetVar="addDlg" resizable="false">
+	  		<h:form id="addOfficeForm">
+		        <h:panelGrid columns="2" cellpadding="5">
+		            <h:outputLabel for="officeName" value="Office Name:"/>
+		            <p:inputText id="officeName" label="officeName" value="#{office.officeName}"/>
+		           
+		            <h:outputLabel for="timezone" value="Time Zone:" />  		            
+       				<p:inputText id="timezone" label="timezone" value="#{office.timeZone}"/>
+		 
+		            <f:facet name="footer">
+		                <p:commandButton value="Add" action="#{office.addOffice}"
+		                update=":clocksForm addOfficeForm" oncomplete="PF('addDlg').hide()" />
+		            </f:facet>  
+		        </h:panelGrid>
+     		</h:form>	
+		</p:dialog>	
+	</h:body>	
+</html>
