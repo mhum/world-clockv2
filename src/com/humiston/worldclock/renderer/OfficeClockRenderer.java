@@ -1,12 +1,17 @@
 package com.humiston.worldclock.renderer;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.TimeZone;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.render.FacesRenderer;
 
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.primefaces.component.clock.Clock;
 import org.primefaces.component.clock.ClockRenderer;
 import org.primefaces.context.RequestContext;
@@ -27,13 +32,8 @@ public class OfficeClockRenderer extends ClockRenderer{
 		Clock clock = (Clock) component;
 
 		if(clock.isSyncRequest()) {
-			TimeZone remoteTimeZone = TimeZone.getTimeZone((String) clock.getAttributes().get("timeZone")); 
-			TimeZone localTimeZone = TimeZone.getDefault();
-			long utcTime = System.currentTimeMillis(); 
-			long remoteOffset = remoteTimeZone.getOffset(utcTime); 
-			long localOffset = localTimeZone.getOffset(utcTime); 
-			long t = utcTime + remoteOffset-localOffset;
-			RequestContext.getCurrentInstance().addCallbackParam("datetime", t);
+			String timeZone = (String) clock.getAttributes().get("timeZone"); 
+			RequestContext.getCurrentInstance().addCallbackParam("datetime", getTime(timeZone));
 			context.renderResponse();
 		}
 	}
@@ -50,14 +50,8 @@ public class OfficeClockRenderer extends ClockRenderer{
 		.attr("locale", context.getViewRoot().getLocale().toString());
 
 		if(mode.equals("server")) {
-			TimeZone remoteTimeZone = TimeZone.getTimeZone((String) clock.getAttributes().get("timeZone")); 
-			TimeZone localTimeZone = TimeZone.getDefault();
-			long utcTime = System.currentTimeMillis(); 
-			long remoteOffset = remoteTimeZone.getOffset(utcTime); 
-			long localOffset = localTimeZone.getOffset(utcTime); 
-			long t = utcTime + remoteOffset-localOffset;
-
-			wb.attr("value", t);
+			String timeZone = (String) clock.getAttributes().get("timeZone");
+			wb.attr("value", getTime(timeZone));
 
 			if(clock.isAutoSync()) {
 				wb.attr("autoSync", true).attr("syncInterval", clock.getSyncInterval());
@@ -67,4 +61,14 @@ public class OfficeClockRenderer extends ClockRenderer{
 		wb.finish();
 	}
 
+	private long getTime(String timeZone){
+		TimeZone remoteTimeZone = TimeZone.getTimeZone(timeZone); 
+		TimeZone localTimeZone = TimeZone.getDefault();
+		long utcTime = System.currentTimeMillis(); 
+		long remoteOffset = remoteTimeZone.getOffset(utcTime); 
+		long localOffset = localTimeZone.getOffset(utcTime); 
+		long t = utcTime + remoteOffset-localOffset;
+
+		return t;
+	}
 }

@@ -9,8 +9,14 @@
 		        <h:panelGrid columns="2" cellpadding="5">
 		            <h:outputLabel for="officeName" value="Office Name:"/>
 		            <p:inputText id="officeName" label="officeName" value="#{officeBean.officeName}"/>
-		            <h:outputLabel for="timeZone" value="Time Zone:" />
-		            <p:inputText id="timeZone" label="timeZone" value="#{officeBean.timeZone}"/>
+		           
+		            <h:outputLabel for="city" value="City:" />  		            
+       				<p:autoComplete id="city" value="#{officeBean.city}" 
+	       				completeMethod="#{officeBean.getCity}"
+	                    var="prediction" itemLabel="#{prediction.description}" itemValue="#{prediction}" 
+	                    converter="cityConverter" 
+	                    forceSelection="true" 
+                    />
 		 
 		            <f:facet name="footer">
 		                <p:commandButton value="Add" action="#{officeBean.addOffice}"

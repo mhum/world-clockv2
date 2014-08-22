@@ -8,12 +8,12 @@
 	  		<h:form id="editOfficeForm">
 		        <h:panelGrid columns="2" cellpadding="5">
 		            <h:outputLabel for="officeName" value="Office Name:"/>
-		            <p:inputText id="officeName" label="officeName" value="#{officeBean.officeName}"/>
+		            <p:inputText id="officeName" label="officeName" value="#{office.officeName}"/>
 		            <h:outputLabel for="timeZone" value="Time Zone:" />
-		            <p:inputText id="timeZone" label="timeZone" value="#{officeBean.timeZone}"/>
+		            <p:inputText id="timeZone" label="timeZone" value="#{office.timeZone}"/>
 		 
 		            <f:facet name="footer">
-		                <p:commandButton value="Save" action="#{officeBean.editOffice}"
+		                <p:commandButton value="Save" action="#{office.editOffice}"
 		                update=":clocksForm editOfficeForm" oncomplete="PF('editDlg').hide()" />
 		            </f:facet>  
 		        </h:panelGrid>

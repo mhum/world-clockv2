@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
 import com.humiston.worldclock.dto.OfficeDto;
  
-@ManagedBean
+@Named
 @ViewScoped
 public class ClockBean implements Serializable{
 	private static final long serialVersionUID = 1L;
