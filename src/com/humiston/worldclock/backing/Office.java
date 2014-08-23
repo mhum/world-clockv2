@@ -9,8 +9,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.humiston.workclock.manager.OfficeList;
 import com.humiston.worldclock.dto.OfficeDto;
+import com.humiston.worldclock.manager.OfficeList;
  
 @Named("office")
 @ConversationScoped
